@@ -9,8 +9,10 @@ app.get('/', function (req, res) {
   res.send('get action from root')
 })
 app.post('/', function (req, res) {
-
-console.log(req.body);
+const sp= req.body.event
+const operation= sp.split(".");
+const action = operation[operation.length-1];
+console.log(JSON.stringify(req.body));
 
 })
 
